@@ -132,7 +132,7 @@ package com.gamecook.scores
             {
                 result = sortOnValue({score:value}, scores[i]);
 
-                if (result == -1 || result == 0)
+                if (result <= 0 )
                     return true;
             }
 
@@ -203,21 +203,7 @@ package com.gamecook.scores
          */
         private function sortOnValue(val1:Object, val2:Object):Number
         {
-
-            var score1:Number = val1.score;
-            var score2:Number = val2.score;
-
-            if (score1 > score2)
-            {
-                return -1;
-            } else if (score1 < score2)
-            {
-                return 1;
-            } else
-            {
-                //they are the same
-                return 0;
-            }
+			return val2.score - val1.score;
         }
 
         /**
